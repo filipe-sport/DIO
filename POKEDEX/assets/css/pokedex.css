@@ -1,4 +1,4 @@
-
+/* Cores */
 .normal {
     background-color: #a6a877 ;
 } 
@@ -53,6 +53,8 @@
 .fairy {
     background-color: #f9aec7;
 } 
+
+/* Detalhes das classes  */
 
 .pokemons{
     list-style: none;
