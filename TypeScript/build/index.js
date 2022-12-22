@@ -87,8 +87,22 @@ class Pessoa {
         this.name = name;
     }
     sayHello() {
-        return `hello ${this.name} ${this.id}`;
+        return "hello";
     }
 }
 const p = new Pessoa(1, "Filipe");
 console.log(p.sayHello());
+//Classes
+class Character {
+    constructor(stregth, skill) {
+        this.stregth = stregth;
+        this.skill = skill;
+    }
+    attack() {
+        console.log(`Attack with ${this.stregth} points`);
+    }
+}
+const p1 = new Character(10, 98);
+console.log(p1);
+p1.attack();
+

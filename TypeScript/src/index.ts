@@ -129,4 +129,43 @@ class Pessoa implements robot2{
 const p =new Pessoa (1, "Filipe")
 console.log(p.sayHello());
 
+//Classes
 
+/*
+Data Modifiers
+public
+private (somente a Classe vêem as propriedades)
+protectec (somente a Classe e subclasses vêem as propriedades)
+*/
+
+class Character{
+    private name?:string;
+    protected stregth:number;
+    public skill:number;
+
+    constructor(name: string, stregth:number, skill:number){
+        this.name = name;
+        this.stregth = stregth;
+        this.skill = skill;
+    }
+    attack():void{
+        console.log(`Attack with ${this.stregth} points`);
+    }  
+}
+const p1 = new Character("Ryu",10,98);
+console.log(p1);
+p1.attack()
+//p1.name //private não deixa pegar a propriedade do construtor
+//p1.stregth // protected somente a Classe e subclasses vêem as propriedades
+
+//Character: superclass
+//Magician: subclass
+class Magiciam extends Character{
+    magicPoints: number;
+    constructor(name: string, stregth:number, skill:number, magicPoints:number){
+        super(name,stregth,skill)
+        this.magicPoints = magicPoints;
+    }
+}
+const p2 = new Magiciam("Mago", 09,30,100)
+//p2.name // private somente a classe Character pode acessar / modificar
