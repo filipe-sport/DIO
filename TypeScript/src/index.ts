@@ -82,3 +82,51 @@ async function getDataBase(id:number)
     return "Filipe"
 }
 
+//Interfaces (type x interface)
+//trabalha-se com variavel
+type robot = {
+    readonly id: number | string; //não se pode alterar valores
+    name: string;
+}
+const bot1: robot = {
+    id: 1,
+    name:"megaman"
+}
+
+//trabalha-se com classe
+interface robot2 {
+    id: number | string;
+    name: string;
+    sayHello(): string;
+    
+}
+const bot2: robot2 = {
+    id: 1,
+    name: "megaman",
+    sayHello: function (): string {
+        throw new Error("Function not implemented.");
+    }
+}
+
+console.log(bot1);
+console.log(bot2);
+
+//console.log(bot1.id = 1); //vai dar error devido ao atributo readonly
+console.log(bot2.id = 2);
+
+class Pessoa implements robot2{
+    id: number | string;
+    name: string;
+    
+    constructor(id: string|number, name: string){
+        this.id = id;
+        this.name = name;
+    }
+    sayHello(): string {
+       return "hello"
+    }
+}
+const p =new Pessoa (1, "Filipe")
+console.log(p.sayHello());
+
+
