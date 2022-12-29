@@ -167,5 +167,26 @@ class Magiciam extends Character{
         this.magicPoints = magicPoints;
     }
 }
-const p2 = new Magiciam("Mago", 09,30,100)
+const p2 = new Magiciam("Mago",19,30,100)
 //p2.name // private somente a classe Character pode acessar / modificar
+
+//Generics
+
+function concatArray <T> (...itens:T[]):T[]{
+    return new Array().concat(...itens)
+}
+
+const numArray = concatArray<number[]>([1,5],[3])
+const stringArray = concatArray<string[]>(["Filipe", "Goku"], ["Vegeta"])
+console.log(numArray);
+console.log(stringArray);
+
+//Decorators
+
+function exibirNome (target:any){
+    console.log(target);
+}
+@exibirNome
+class Funcionario{}
+@exibirNome
+class Quincas{}

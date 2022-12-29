@@ -1,4 +1,10 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -93,8 +99,15 @@ class Pessoa {
 const p = new Pessoa(1, "Filipe");
 console.log(p.sayHello());
 //Classes
+/*
+Data Modifiers
+public
+private (somente a Classe vêem as propriedades)
+protectec (somente a Classe e subclasses vêem as propriedades)
+*/
 class Character {
-    constructor(stregth, skill) {
+    constructor(name, stregth, skill) {
+        this.name = name;
         this.stregth = stregth;
         this.skill = skill;
     }
@@ -102,7 +115,40 @@ class Character {
         console.log(`Attack with ${this.stregth} points`);
     }
 }
-const p1 = new Character(10, 98);
+const p1 = new Character("Ryu", 10, 98);
 console.log(p1);
 p1.attack();
-
+//p1.name //private não deixa pegar a propriedade do construtor
+//p1.stregth // protected somente a Classe e subclasses vêem as propriedades
+//Character: superclass
+//Magician: subclass
+class Magiciam extends Character {
+    constructor(name, stregth, skill, magicPoints) {
+        super(name, stregth, skill);
+        this.magicPoints = magicPoints;
+    }
+}
+const p2 = new Magiciam("Mago", 19, 30, 100);
+//p2.name // private somente a classe Character pode acessar / modificar
+//Generics
+function concatArray(...itens) {
+    return new Array().concat(...itens);
+}
+const numArray = concatArray([1, 5], [3]);
+const stringArray = concatArray(["Filipe", "Goku"], ["Vegeta"]);
+console.log(numArray);
+console.log(stringArray);
+//Decorators
+function exibirNome(target) {
+    console.log(target);
+}
+let Funcionario = class Funcionario {
+};
+Funcionario = __decorate([
+    exibirNome
+], Funcionario);
+let Quincas = class Quincas {
+};
+Quincas = __decorate([
+    exibirNome
+], Quincas);
