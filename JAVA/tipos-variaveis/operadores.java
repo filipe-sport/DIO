@@ -17,6 +17,29 @@ public class operadores {
     int divisão = 15 / 3;
     int moodulo = 12 % 2;
     double resultado = (10 * 3) + (20 / 4);
+
+    public static void main(String[] args) {
+        int numero = 5;
+        numero = - numero;
+        System.out.println(numero);
+
+        int numero1 = - numero; // OU numero * -1;        
+        System.out.println(numero1);
+
+        // -------------------------------------------//
+        
+        int numero2 = numero1++;
+        int numero3 = numero1++;
+        int numero4 = ++numero1 ;
+
+        System.out.println(numero2);
+        System.out.println(numero3);
+        System.out.println(numero4);
+
+        
+    }
+    
+    
     
 
 }
