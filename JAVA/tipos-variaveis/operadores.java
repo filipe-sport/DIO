@@ -28,7 +28,7 @@ public class operadores {
 
         // -------------------------------------------//
         
-        int numero2 = numero1++;
+        int numero2 = ++numero1;
         int numero3 = numero1++;
         int numero4 = ++numero1 ;
 
@@ -36,6 +36,9 @@ public class operadores {
         System.out.println(numero3);
         System.out.println(numero4);
 
+        boolean variavel = true;
+        System.out.println(!variavel);
+        System.out.println(variavel);
         
     }
     
