@@ -1,4 +1,4 @@
-package tiposvariaveisjava;
+
 
 public class operadoresTernarios {
     public static void main(String[] args) {
