@@ -1,5 +1,3 @@
-package metodos;
-
 public class SmartTv {
     
         boolean ligada = false;
